@@ -65,7 +65,10 @@ df_for_X = principal_df
 df_for_Y = df
 # ------------------------------------------------------------------------------------------------------------------ #
 
-
+ID_array =[None] * len(df)
+for index, row in enumerate(df.iterrows(), start=0):
+  ID_array[index] = "EM" + str(index)
+df['Employee Code'] = ID_array
 
 # Specifying best amount of K value -------------------------------------------------------------------------------- #
 best = 10
