@@ -75,7 +75,7 @@ best = 10
 
 # Loading Models --------------------------------------------------------------------------------------------------- #
 model_SVM = joblib.load('model_SVM.pkl')
-model_Log = joblib.load('model_log.pkl')
+model_Log = joblib.load('model_Log.pkl')
 model_Per = joblib.load('model_Per.pkl')
 # ------------------------------------------------------------------------------------------------------------------ #
 
