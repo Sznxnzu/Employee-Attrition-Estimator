@@ -82,6 +82,12 @@ model_Log = joblib.load('model_Log.pkl')
 model_Per = joblib.load('model_Per.pkl')
 # ------------------------------------------------------------------------------------------------------------------ #
 
+def create_pie_chart(data, labels):
+    fig, ax = plt.subplots()
+    ax.pie(data, labels=labels, autopct='%1.1f%%', startangle=90)
+    ax.axis('equal') 
+    return fig
+
 def make_prediction_and_plot(model_selection):
     
     input_data = df
@@ -103,8 +109,8 @@ def make_prediction_and_plot(model_selection):
         num_rows_nop = estimation['Estimation'].value_counts()[0]
         amonts = [int(num_rows_yes),int(num_rows_nop)]
         labels = ['Yes','No']
-        fig = plt.pie(amonts, labels=labels, autopct='%1.1f%%', startangle=90)
-        plt.axis('equal')
+        
+        fig = create_pie_chart(amonts,labels)
         
         return fig
         
@@ -126,8 +132,8 @@ def make_prediction_and_plot(model_selection):
         num_rows_nop = estimation['Estimation'].value_counts()[0]
         amonts = [int(num_rows_yes),int(num_rows_nop)]
         labels = ['Yes','No']
-        fig = plt.pie(amonts, labels=labels, autopct='%1.1f%%', startangle=90)
-        plt.axis('equal')
+        
+        fig = create_pie_chart(amonts,labels)
         
         return fig
         
@@ -148,8 +154,8 @@ def make_prediction_and_plot(model_selection):
         num_rows_nop = estimation['Estimation'].value_counts()[0]
         amonts = [int(num_rows_yes),int(num_rows_nop)]
         labels = ['Yes','No']
-        fig = plt.pie(amonts, labels=labels, autopct='%1.1f%%', startangle=90)
-        plt.axis('equal')
+        
+        fig = create_pie_chart(amonts,labels)
         
         return fig
 
