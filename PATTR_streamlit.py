@@ -174,7 +174,7 @@ def main():
         st.session_state.button_clicked = True
     
     st.button('Make Prediction', on_click=make_prediction)
-    st.radio('Pick one:', ['nose','ear'])
+    st.select_slider('Slide to select', options=['yes','no'])
     
     if st.session_state.button_clicked:
         fig = make_prediction_and_plot(model_selection)
