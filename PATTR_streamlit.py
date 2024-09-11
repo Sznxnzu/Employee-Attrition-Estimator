@@ -86,6 +86,7 @@ def create_pie_chart(data, labels):
     fig, ax = plt.subplots()
     ax.pie(data, labels=labels, autopct='%1.1f%%', startangle=90)
     ax.axis('equal') 
+    plt.title('Estimated amount of employees to attrition')
     return fig
 
 def make_prediction_and_plot(model_selection):
@@ -189,7 +190,7 @@ def main():
         st.session_state.button_clicked = False
     
     st.button('Make Prediction', on_click=make_prediction)
-    show_more_data = st.checkbox('View Additional Information', on_click=show_more)
+    show_more_data = st.checkbox('View Additional Information')
 
     if show_more_data:
         st.image('./Combination_Chart.png')
