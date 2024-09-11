@@ -165,10 +165,6 @@ def main():
     
     def make_prediction():
         st.session_state.button_clicked = True
-
-    def show_more():
-        st.image('./Combination_Chart.png')
-        st.image('./Correlation_Matrix.png')
         
     st.title("Employee Attrition Estimator")
     
@@ -193,7 +189,11 @@ def main():
         st.session_state.button_clicked = False
     
     st.button('Make Prediction', on_click=make_prediction)
-    st.checkbox('View Additional Information', on_click=show_more)
+    show_more_data = st.checkbox('View Additional Information', on_click=show_more)
+
+    if show_more_data:
+        st.image('./Combination_Chart.png')
+        st.image('./Correlation_Matrix.png')
     
     if st.session_state.button_clicked:
         fig = make_prediction_and_plot(model_selection)
