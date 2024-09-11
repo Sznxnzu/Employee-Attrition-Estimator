@@ -169,12 +169,18 @@ def main():
     st.title("Employee Attrition Estimator")
     
     st.subheader('Employee Attrition')
-    st.text('Employee Attrition is defined as employees leaving their organizations for unpredictable or uncontrollable reasons. Many terms make up attrition, the most common being termination, resignation, planned or voluntary retirement, structural changes, long-term illness, layoffs.')
-    st.text('This, is certainly a problem for many companies and organizations, especially with the rise of employee attrition worldwide.')
+    st.text('Employee Attrition is defined as employees leaving their organizations')
+    st.text('for unpredictable or uncontrollable reasons. Many terms make up attrition,')
+    st.text('the most common being termination, resignation, planned or voluntary retirement,')
+    st.text('structural changes, long-term illness, layoffs.')
+    
+    st.text('This, is certainly a problem for many companies and organizations, especially with')
+    st.text('the rise of employee attrition worldwide.')
     st.text('As such, an estimator has been made based on the dataset from IBM.')
 
     st.subheader('How does it work?')
-    st.text('This estimator uses three methods with varying accuracies, which are Support Vector Machines, Perceptrons, and Logistic Regression.')
+    st.text('This estimator uses three methods with varying accuracies, which are')
+    st.text('Support Vector Machines, Perceptrons, and Logistic Regression.')
     # st.image('./header.png')
     
     st.subheader('Select the Machine Learning Model :')
