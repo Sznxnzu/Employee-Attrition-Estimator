@@ -181,7 +181,8 @@ def main():
     st.subheader('How does it work?')
     st.text('This estimator uses three methods with varying accuracies, which are')
     st.text('Support Vector Machines, Perceptrons, and Logistic Regression.')
-    # st.image('./header.png')
+    st.image('./Combination_Chart.png')
+    st.image('./Correlation_Matrix.png')
     
     st.subheader('Select the Machine Learning Model :')
     model_selection = st.selectbox('Classification Models', ['SVM', 'Logistic', 'Perceptron'])
