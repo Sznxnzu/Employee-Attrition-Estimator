@@ -162,19 +162,29 @@ def make_prediction_and_plot(model_selection):
 
 
 def main():
+    
+    def make_prediction():
+        st.session_state.button_clicked = True
+        
     st.title("Employee Attrition Estimator")
     
-    st.header('Select the Machine Learning Model :')
+    st.subheader('Employee Attrition')
+    st.text('Employee Attrition is defined as employees leaving their organizations for unpredictable or uncontrollable reasons. Many terms make up attrition, the most common being termination, resignation, planned or voluntary retirement, structural changes, long-term illness, layoffs.')
+    st.text('This, is certainly a problem for many companies and organizations, especially with the rise of employee attrition worldwide.')
+    st.text('As such, an estimator has been made based on the dataset from IBM.')
+
+    st.subheader('How does it work?')
+    st.text('This estimator uses three methods with varying accuracies, which are Support Vector Machines, Perceptrons, and Logistic Regression.')
+    # st.image('./header.png')
+    
+    st.subheader('Select the Machine Learning Model :')
     model_selection = st.selectbox('Classification Models', ['SVM', 'Logistic', 'Perceptron'])
     
     if 'button_clicked' not in st.session_state:
         st.session_state.button_clicked = False
-
-    def make_prediction():
-        st.session_state.button_clicked = True
     
     st.button('Make Prediction', on_click=make_prediction)
-    st.select_slider('Slide to select', options=['yes','no'])
+    st.checkbox('View Additional Information')
     
     if st.session_state.button_clicked:
         fig = make_prediction_and_plot(model_selection)
